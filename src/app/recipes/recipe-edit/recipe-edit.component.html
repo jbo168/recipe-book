@@ -30,16 +30,17 @@
                         <div class="form-group">
                             <label for="imagePath">Image Url</label>
                             <input 
-                            type="text"
-                            id="imagePath"
-                            formControlName="imagePath"
-                            class="form-control">
+                                type="text"
+                                id="imagePath"
+                                formControlName="imagePath"
+                                class="form-control"
+                                #imagePath>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <img src="" class="img-responsive">
+                        <img [src]="imagePath.value" class="img-responsive">
                     </div>
                 </div>
                 <div class="row">
@@ -47,18 +48,17 @@
                         <div class="form-group">
                             <label for="description">Description</label>
                             <textarea 
-                            type="text"
-                            id="description"
-                            formControlName="description"
-                            class="form-control"
-                            rows="6"></textarea>
+                                type="text"
+                                id="description"
+                                formControlName="description"
+                                class="form-control"
+                                rows="6"></textarea>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12"  formArrayName="ingredients">
-                    <div 
-                        class="row"
+                    <div class="row"
                         *ngFor="let ingredientCtrl of ingredientsControls; let i = index"
                         [formGroupName]="i"
                         style="margin-top: 10px;">
@@ -75,7 +75,10 @@
                             formControlName="amount">
                         </div>
                         <div class="col-xs-2">
-                            <button class="btn btn-danger">X</button>
+                            <button 
+                                type="button" 
+                                class="btn btn-danger"
+                                (click)="onDeleteIngredient(i)">X</button>
                         </div>
                     </div>
                     <hr>

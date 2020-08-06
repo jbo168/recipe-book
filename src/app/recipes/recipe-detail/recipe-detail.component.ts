@@ -35,7 +35,8 @@ constructor(private recipeService: RecipeService,
     // this.router.navigate(['../', this.id,'edit'], {relativeTo: this.route});
   }
 
-  onDeletRecipe() {
+  onDeleteRecipe() {
     this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['./recipes']);
   }
 }
