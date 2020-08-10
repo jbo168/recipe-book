@@ -69,7 +69,7 @@ export class AuthService {
       _token: string,
       _tokenExpirationDate: string
     } = JSON.parse(localStorage.getItem('userData'));
-    if(!userData) {
+    if (!userData) {
       return;
     }
 
@@ -110,7 +110,7 @@ export class AuthService {
       email,
       userId,
       token,
-      expirationDate
+      expirationDate,
     );
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
