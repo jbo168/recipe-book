@@ -3,11 +3,12 @@
     <!-- <div class="div alert alert-danger" *ngIf="error">
       <p>{{ error }}</p>
     </div> -->
-    <app-alert
+    <!-- <app-alert
       [message]="error"
       *ngIf="error"
       (click)="onHandleError()">
-    </app-alert>
+    </app-alert> -->
+    <ng-template appPlaceholder></ng-template>
     <div *ngIf="isLoading" style="text-align: center;">
       <app-loading-spinner></app-loading-spinner>
     </div>
