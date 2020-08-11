@@ -10,6 +10,7 @@ import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations:
@@ -25,16 +26,10 @@ import { CoreModule } from './core.module';
     SharedModule,
     CoreModule
   ],
-  providers:
-  [
-    ShoppingListService,
-    RecipeService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true
-    }
-  ],
+  // providers:
+  // [
+  //   LoggingService
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
