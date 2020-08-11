@@ -3,7 +3,6 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoggingService } from './logging.service';
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { LoggingService } from './logging.service';
       useClass: AuthInterceptorService,
       multi: true
     },
-    LoggingService
+    // LoggingService
   ]
 })
 export class CoreModule {

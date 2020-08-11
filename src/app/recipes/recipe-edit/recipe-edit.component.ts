@@ -14,7 +14,7 @@ editMode = false;
 recipeForm: FormGroup;
 
 get ingredientsControls() {
-  return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  return (this.recipeForm.get('ingredients') as FormArray).controls;
 }
 
 constructor(private route: ActivatedRoute,
@@ -50,11 +50,11 @@ constructor(private route: ActivatedRoute,
   onAddIngredient() {
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
-        'name': new FormControl(null, Validators.required),  
+        'name': new FormControl(null, Validators.required),
         'amount': new FormControl(null,  [
           Validators.required,
           Validators.pattern(/^[1-9]+[0-9]*$/)
-        ])  
+        ])
       })
     );
 }
@@ -65,8 +65,8 @@ onDeleteIngredient(index: number) {
 
 onCancel() {
   this.router.navigate(['../'], {relativeTo: this.route});
-} 
-  
+}
+
   private initForm() {
     let recipeName = '';
     let recipeImagePath = '';
