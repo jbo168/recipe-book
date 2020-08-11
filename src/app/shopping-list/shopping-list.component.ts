@@ -23,16 +23,16 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       (ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       }
-    )
+    );
 
     this.loggingService.printLog('Hello from ShoppingList service ngOnInit');
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  onEditItem(index: number) {
+  onEditItem(index: number): void {
     this.slService.startedEditing.next(index);
   }
 }
