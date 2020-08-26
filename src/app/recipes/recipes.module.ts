@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { TestInputComponent } from './test-input/test-input.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     RecipeItemComponent,
     RecipeDetailComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    TestInputComponent
   ],
   imports:
   [
@@ -34,7 +36,7 @@ import { SharedModule } from '../shared/shared.module';
     RecipeItemComponent,
     RecipeDetailComponent,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
   ]
 })
 export class RecipesModule {
